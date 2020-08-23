@@ -18,8 +18,29 @@
    * Should be to substitute base classe objects with child class object and not alter behavior/characteristics of program.
 
 4. Interface Segregation Principle
-   * Clients should not be forced to depend upon interfaces that they do not using, to avoid interface pollution. 
-   
+   * Clients should not be forced to depend upon interfaces that they do not using, to avoid interface pollution.
+
 5. Dependency Inversion Principle
    * high level modules should not depend upon low level modules, both should depend upon abstractions.
    * abstractions should not depend upon details, details should depend upon abstraction.
+
+### Design Patterns
+
+1. Creational
+   * deal with the process of creation objects of classes, they are:
+
+      * Builder
+         > When Class constructor requires a lot of inf in immutable scenario.
+
+         > Objects that needs other objects or "parts" to construct them
+
+      * Simple Factory
+      * Factory Method
+      * Prototype
+      * Singleton
+      * Abstract Factory
+      * Object Pool
+2. Structural
+   * deal with how classes and objects are arranged or composed
+3. Behavioral
+   * describe how classes and objects interacts & communicate with each other.
