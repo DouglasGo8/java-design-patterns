@@ -1,12 +1,11 @@
-package com.udemy.java.design.patterns.main.patterns.creational.builder.inner;
+package com.udemy.java.design.patterns.main.patterns.creational.builder.outer;
 
-import com.udemy.java.design.patterns.main.patterns.creational.builder.App;
 import com.udemy.java.design.patterns.main.patterns.creational.builder.domain.Address;
 
 import java.time.LocalDate;
 import java.time.Period;
 
-public class UserWebDTOBuilder implements UserDTOBuilder {
+public class UserWebDTOBuilder implements OuterUserDTOBuilder {
 
     private String age;
     private String lastName;
@@ -17,39 +16,39 @@ public class UserWebDTOBuilder implements UserDTOBuilder {
     private UserWebDTO dto;
 
     @Override
-    public UserDTOBuilder withLastName(String lastName) {
+    public OuterUserDTOBuilder withLastName(String lastName) {
         this.lastName = lastName;
         return this;
     }
 
     @Override
-    public UserDTOBuilder withFirstName(String firstName) {
+    public OuterUserDTOBuilder withFirstName(String firstName) {
         this.firstName = firstName;
         return this;
     }
 
     @Override
-    public UserDTOBuilder withBirthDay(LocalDate birthDay) {
+    public OuterUserDTOBuilder withBirthDay(LocalDate birthDay) {
         final Period ageInYears = Period.between(birthDay, LocalDate.now());
         this.age = Integer.toString(ageInYears.getYears());
         return this;
     }
 
     @Override
-    public UserDTOBuilder withAddress(Address address) {
+    public OuterUserDTOBuilder withAddress(Address address) {
         this.address = address.getHouseNumber() + ", " + address.getStreet() + ", " + "\n" + address.getCity()
                 + "\n" + address.getState() + address.getZipCode();
         return this;
     }
 
     @Override
-    public App.UserDTO build() {
-        dto = new UserWebDTO(this.firstName + " " + this.lastName, this.address, this.age);
+    public OuterUserDTO build() {
+        dto = new UserWebDTO(this.age, this.firstName + " " + this.lastName, this.address);
         return dto;
     }
 
     @Override
-    public App.UserDTO getUserDTO() {
+    public OuterUserDTO getOuterUserDTO() {
         return dto;
     }
 }

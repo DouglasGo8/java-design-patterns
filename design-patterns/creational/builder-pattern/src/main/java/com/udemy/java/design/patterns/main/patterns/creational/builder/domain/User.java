@@ -2,10 +2,11 @@
 
 package com.udemy.java.design.patterns.main.patterns.creational.builder.domain;
 
-import com.udemy.java.design.patterns.main.patterns.creational.builder.domain.Address;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 /**
@@ -15,6 +16,7 @@ import java.time.LocalDate;
 @Setter
 public class User {
 
+    @NotBlank(message = "Name cannot be blank")
     private String lastName;
     private String firstName;
     //

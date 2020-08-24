@@ -1,6 +1,5 @@
-package com.udemy.java.design.patterns.main.patterns.creational.builder.inner;
+package com.udemy.java.design.patterns.main.patterns.creational.builder.outer;
 
-import com.udemy.java.design.patterns.main.patterns.creational.builder.App;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,7 +9,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserWebDTO implements App.UserDTO {
+public class UserWebDTO implements OuterUserDTO {
     private String age;
     private String name;
     private String address;
