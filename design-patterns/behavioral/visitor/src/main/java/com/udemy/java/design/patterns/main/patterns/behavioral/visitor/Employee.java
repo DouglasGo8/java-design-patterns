@@ -1,16 +1,23 @@
 package com.udemy.java.design.patterns.main.patterns.behavioral.visitor;
 
-import java.util.Collection;
+import lombok.Getter;
+import lombok.Setter;
 
-public interface Employee {
-    int getEmployeeId();
+public class Employee implements Visitable {
 
-    int getPerformanceRating();
+  @Getter
+  private final String name;
 
-    void setPerformanceRating(int rating);
+  @Getter
+  @Setter
+  private String performanceStatus;
 
-    Collection<Employee> getDirectReports();
+  public Employee(String name) {
+    this.name = name;
+  }
 
-    void accept(Visitor visitor);
-
+  @Override
+  public void accept(Visitor v) {
+    v.visit(this);
+  }
 }

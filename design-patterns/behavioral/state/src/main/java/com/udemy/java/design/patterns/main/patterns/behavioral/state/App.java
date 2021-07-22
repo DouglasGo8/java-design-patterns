@@ -4,10 +4,9 @@ public class App {
 
     public static void main(String... args) {
 
-        var order = new Order();
 
-        order.paymentSuccessfully();
-        order.dispatched();
-        order.cancel();
+        var emp = new Employee("HR");
+        emp.working();
+
     }
 }

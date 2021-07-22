@@ -1,25 +1,18 @@
 package com.udemy.java.design.patterns.main.patterns.behavioral.command;
 
-import lombok.SneakyThrows;
-
-import java.util.concurrent.TimeUnit;
-
 public class App {
 
-    @SneakyThrows
-    public static void main(String... args) {
 
-        var ews = new EWSService();
-        var cmd1 = new AddMemberCommand("spam", "a@mail.com", ews);
-        //
-        var task = MailTaskRunner.getInstance();
-        task.addCommand(cmd1);
+  public static void main(String... args) {
 
-        var cmd2 = new AddMemberCommand("spam", "b@mail.com", ews);
-        task.addCommand(cmd2);
+    var ac = new AC();
+    var start = new StartACCommand(ac);
+    var stop = new StopACCommand(ac);
 
-        TimeUnit.SECONDS.sleep(3);
+    var startCmd = new ACAutRemote(start);
+    var stopCmd = new ACAutRemote(stop);
 
-        task.shutdown();
-    }
+    startCmd.buttonPressed();
+    stopCmd.buttonPressed();
+  }
 }

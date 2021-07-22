@@ -5,7 +5,7 @@ import java.util.LinkedList;
 public class App {
 
 
-    private static LinkedList<Order> orders = new LinkedList<>();
+    private static final LinkedList<Order> orders = new LinkedList<>();
 
     public static void main(String... args) {
 

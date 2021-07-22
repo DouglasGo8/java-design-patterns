@@ -25,7 +25,10 @@ public class App {
 
         // Constructor will be invoked just only once
         singleton = LazyRegistryIODH.getInstance(); // Lazy
-        singleton = LazyRegistryIODH.getInstance(); // Lazy
+        // singleton = LazyRegistryIODH.getInstance(); // Lazy
+
+        // Better approach
+        var inst = LazyRegistryWithDCL.getInstance();
 
     }
 }

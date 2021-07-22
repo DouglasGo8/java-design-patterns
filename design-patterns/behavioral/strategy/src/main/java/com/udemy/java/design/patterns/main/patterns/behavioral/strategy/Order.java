@@ -11,7 +11,6 @@ public class Order {
 
     @Getter
     @Setter
-
     private String id;
     @Getter
     @Setter
@@ -21,7 +20,7 @@ public class Order {
     private double total;
 
     @Getter
-    private Map<String, Double> items = new HashMap<>();
+    private final Map<String, Double> items = new HashMap<>();
 
     public Order(String id) {
         this.id = id;
